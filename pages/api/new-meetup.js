@@ -1,10 +1,9 @@
 import { MongoClient } from 'mongodb';
+const ApiKey = process.env.MONGO_DB_API_KEY;
 // /api/new-meetups
 
 export const connectToDataBase = async () => {
-  const client = await MongoClient.connect(
-    'mongodb+srv://new-meetups:Eup75Ukr5UBYQMWI@cluster0.pvl9o.mongodb.net/new-meetup?retryWrites=true&w=majority'
-  );
+  const client = await MongoClient.connect(ApiKey);
 
   const dataBase = client.db();
 
